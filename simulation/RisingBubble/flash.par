@@ -50,7 +50,7 @@ refine_var_count = 1
 # Runtime parameters for Driver
 tstep_change_factor = 1.0
 nend = 10000000
-tmax = 5
+tmax = 1
 restart = .FALSE.
 dtinit = 5e-06
 dtmax = 5e-06
