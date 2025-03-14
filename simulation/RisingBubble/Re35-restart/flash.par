@@ -19,8 +19,9 @@ plot_var_3 = "vely"
 plot_var_4 = "dfun"
 plot_var_5 = "visc"
 plot_var_6 = "rhoc"
-checkpointFileNumber = 0
-plotfileNumber = 0
+checkpointFileNumber = 3
+plotfileNumber = 30
+ignoreForcedPlot = .TRUE.
 
 # Runtime parameters for Grid
 geometry = "cartesian"
@@ -50,8 +51,8 @@ refine_var_count = 1
 # Runtime parameters for Driver
 tstep_change_factor = 1.0
 nend = 10000000
-tmax = 1
-restart = .FALSE.
+tmax = 5
+restart = .TRUE.
 dtinit = 5e-06
 dtmax = 5e-06
 
