@@ -1,0 +1,12 @@
+# YAML configuration file for jobrunner
+job:
+  setup:
+    - testSetup.sh
+  submit:
+    - testRun.sh
+  clean:
+    - "*.out"
+    - job.submit
+    - job.setup
+    - job.output
+    - flashxtest_api.log
