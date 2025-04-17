@@ -1,2 +1,2 @@
 # Run Flash-X test suite
-flashxtest run-suite --archive
+cd $JobWorkDir && flashxtest run-suite --archive
