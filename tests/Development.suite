@@ -24,6 +24,9 @@ incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cb
 incompFlow/FlowBoiling -t "Comparison/incompFlow/FlowBoiling/2d/AMReX" -np 4 -cbase 2025-04-16
 incompFlow/DeformingBubble -t "Composite/DeformingBubble/2d/AMReX" -np 4 -cbase 2025-04-16 -rbase 2025-04-16_2
 incompFlow/DeformingBubble -t "Composite/DeformingBubble/2d/Paramesh" -np 4 -cbase 2025-04-16 -rbase 2025-04-16_2
+incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/3d/AMReX" -np 10 -cbase 2025-04-17_3
+incompFlow/RisingBubble -t "Comparison/RisingBubble/AMReXGCFill/3d" -np 10 -cbase 2025-04-17_3
+incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/AMReX/3d" -np 5 -cbase 2025-04-17_3
 #incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/Paramesh/2d" -np 4
 #incompFlow/RisingBubble -t "Comparison/RisingBubble/Paramesh/2d" -np 3
 #incompFlow/RisingBubble -t "Comparison/RisingBubble/ParameshGCFill/2d" -np 3

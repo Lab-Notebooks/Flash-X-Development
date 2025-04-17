@@ -27,3 +27,7 @@ incompFlow/DeformingBubble -t "Composite/DeformingBubble/2d/AMReX" -np 4 -cbase 
 incompFlow/DeformingBubble -t "Composite/DeformingBubble/2d/Paramesh" -np 4 -cbase 2023-10-31_2 -rbase 2023-10-31_3
 incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/2d/AMReX" -np 4 -cbase 2024-08-06_4 #2023-04-03
 incompFlow/FlowBoiling -t "Comparison/incompFlow/FlowBoiling/2d/AMReX" -np 4 -cbase 2025-04-14_2
+incompFlow/FlowBoiling -t "Comparison/incompFlow/FlowBoiling/3d/AMReX" -np 10 -cbase 2025-04-17_4
+incompFlow/PoolBoiling -t "Comparison/incompFlow/PoolBoiling/3d/AMReX" -np 10 -cbase 2025-04-17_2
+incompFlow/RisingBubble -t "Comparison/RisingBubble/AMReXGCFill/3d" -np 10 -cbase 2025-04-17
+incompFlow/ChannelFlow -t "Comparison/incompFlow/ChanneFlow/AMReX/3d" -np 5 -cbase 2025-04-17
