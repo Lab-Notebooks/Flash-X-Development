@@ -1,0 +1,28 @@
+# Jobrunner configuration file
+
+job:
+  target: flashx
+  setup:
+    - flashOptions.sh
+    - flashBuild.sh
+  submit:
+    - calResources.sh
+    - flashRun.sh
+  input:
+    - flash.toml
+  archive:
+    - flash.par
+    - amrex.pc
+    - "INS*"
+    - "*.out"
+    - "*.boiling"
+    - "*_hdf5_*"
+  clean:
+    - flashx
+    - setup_params
+    - flash.par
+    - amrex.pc
+    - "*_hdf5_plt_*"
+    - "*_hdf5_grd_*"
+    - "*_hdf5_htr_*"
+    - "*.out"
