@@ -10,7 +10,7 @@ ln -sf $SiteHome/Makefile.h $FLASHX_HOME/sites/$TestSiteName/Makefile.h
 # Initialize config and execfile
 flashxtest init -z $FLASHX_HOME \
 	-s $TestSiteName -m $FLASHTEST_MAIN_ARCHIVE \
-	-a $FLASHTEST_LOCAL_ARCHIVE -mpi=mpirun -make="make -j"
+	-a $FLASHTEST_LOCAL_ARCHIVE -o $FLASHTEST_OUTDIR -mpi=mpirun -make="make -j"
 
 # Initialiaze Flash-X test suite
-flashxtest setup-suite --overwrite Tests.suite 
+flashxtest setup-suite --overwrite Development.suite 

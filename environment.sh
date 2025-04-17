@@ -38,6 +38,19 @@ export HYPRE_HOME="$PROJECT_HOME/software/hypre/HYPRE/install-$SiteName"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HYPRE_HOME/lib"
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
+# Flash-X test archive paths
+if ! [ $FLASHTEST_MAIN_ARCHIVE ]; then
+	export FLASHTEST_MAIN_ARCHIVE="$PROJECT_HOME/tests/MainArchive"
+fi
+
+if ! [ $FLASHTEST_LOCAL_ARCHIVE ]; then
+	export FLASHTEST_LOCAL_ARCHIVE="$PROJECT_HOME/tests/LocalArchive"
+fi
+
+if ! [ $FLASHTEST_OUTDIR ]; then
+	export FLASHTEST_OUTDIR="$PROJECT_HOME/tests/TestResults"
+fi
+
 # Output information to stdout
 echo "---------------------------------------------------------------------------------------"
 echo "Execution Environment:"
