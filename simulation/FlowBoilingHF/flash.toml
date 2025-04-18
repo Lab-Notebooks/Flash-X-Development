@@ -4,22 +4,22 @@
 [Heater]
   htr_heaterName = "flow_boiling"
   htr_numHeaters = 1
-  htr_nucSeedRadius = 0.01
+  htr_nucSeedRadius = 0.1
 
 [Heater.0001]
   dim = 1
-  xmin = -24.0
-  xmax = 24.0
+  xmin = -5.0
+  xmax = 5.0
   ymin = 0.0
   ymax = 1e-13
-  zmin = -2.0
-  zmax =  2.0
+  zmin = -2.5
+  zmax = 2.5
   wallTemp = 1.0
   advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 0.4
-  numSites = 100
+  nucWaitTime = 0.2
+  numSites = 60
   non_uniform_temp_flag = 0
   C3 = 0.0 
   C2 = 0.0
@@ -27,7 +27,7 @@
   C0 = 0.9 
   tbl_thickness = 0.04
   heat_flux_flag = 1
-  nd_heat_flux = 100
+  nd_heat_flux = 5
 
 [Logfile]
   run_comment = "Flow Boiling problem"
@@ -35,24 +35,28 @@
 
 [Grid]
   geometry = "cartesian"
-  xmin = -24.0
-  xmax =  24.0
-  ymin =  0.0
-  ymax =  4.0
+  xmin = -5.0
+  xmax =  5.0
+  ymin = 0.0
+  ymax = 2.5
   xl_boundary_type = "inflow_ins"
   xr_boundary_type = "outflow_ins"
   yl_boundary_type = "noslip_ins"
   yr_boundary_type = "slip_ins"
   gr_amrexMG_composite_solve = true
-  gr_amrexMG_Tol = 5.0e-11
+  gr_amrexMG_Tol = 1.0e-13
   gr_amrexMG_max_iter = 200
-  nblockx = 12
-  nblocky = 1
-  nrefs = 10000000
-  lrefine_min = 1
-  lrefine_max = 4
-  flux_correct = true
+  nblockx = 16 #128
+  nblocky = 4 #32
   enableMaskedGCFill = true
+  nrefs = 1000
+  lrefine_min = 1
+  lrefine_max = 3
+  flux_correct = true
+  amrexFaceInterpolator = "face_div_free"
+  refine_var_1 = "dfun"
+  #refine_var_2 = "temp"
+  refine_var_count = 1
 
 [IncompNS]
   ins_invReynolds = 0.0042
@@ -61,13 +65,13 @@
   ins_cflFlg = 1
   ins_cfl = 0.05
   ins_sigma = 0.05
-  ins_dtSpec = 1e-6
+  ins_dtSpec = 0.1e-3
   ins_pressureCorrect = false
   ins_intSchm = 2
-  ins_advSchm = 2
+  ins_advSchm = 105
 
 [Outlet]
-  out_buffer = 1.0
+  out_buffer = 2.0
 
 [Simulation]
   sim_lengthScaleMeters = 0.001
@@ -82,23 +86,28 @@
   mph_CpGas = 0.83
   mph_Stefan = 0.5298
   mph_Tsat = 0.15
+  mph_presTol = 0.01
+  mph_tempTol = 0.01
 
 [HeatAD]
-  ht_Prandtl = 1.0
+  ht_Prandtl = 8.4
 
 [Driver]
   restart = false
-  nend = 1000000
-  tmax = 1000000
-  dtinit = 1e-5
+  nend = 1200000
+  tmax = 10
+  dtinit = 0.1e-3
   dtmax = 0.4e-3
   tstep_change_factor = 1.01
+  wall_clock_time_limit = -1
 
 [IO]
-  checkpointFileNumber = 0
-  plotFileNumber = 0
+  basenm = "INS_Flow_Boiling_"
   checkpointFileIntervalTime = 1.0
   plotFileIntervalTime = 0.1
+  checkpointFileNumber = 0
+  rolling_checkpoint = 2
+  plotFileNumber = 0
   plot_var_1 = "pres"
   plot_var_2 = "velx"
   plot_var_3 = "vely"

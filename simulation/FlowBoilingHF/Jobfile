@@ -22,6 +22,8 @@ job:
     - setup_params
     - flash.par
     - amrex.pc
+    - "flashx*"
+    - "*.log"
     - "*_hdf5_plt_*"
     - "*_hdf5_grd_*"
     - "*_hdf5_htr_*"
