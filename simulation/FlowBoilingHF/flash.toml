@@ -7,13 +7,13 @@
   htr_nucSeedRadius = 0.1
 
 [Heater.0001]
-  dim = 1
-  xmin = -5.0
-  xmax = 5.0
-  ymin = 0.0
-  ymax = 1e-13
+  dim  = 1
+  xmin =  0.0
+  xmax = 20.0
+  ymin =  0.0
+  ymax =  1e-13
   zmin = -2.5
-  zmax = 2.5
+  zmax =  2.5
   wallTemp = 1.0
   advAngle = 90.0
   rcdAngle = 45.0
@@ -27,7 +27,7 @@
   C0 = 0.9 
   tbl_thickness = 0.04
   heat_flux_flag = 1
-  nd_heat_flux = 5
+  nd_heat_flux = 1
 
 [Logfile]
   run_comment = "Flow Boiling problem"
@@ -35,10 +35,10 @@
 
 [Grid]
   geometry = "cartesian"
-  xmin = -5.0
-  xmax =  5.0
-  ymin = 0.0
-  ymax = 2.5
+  xmin =  0.0
+  xmax =  20.0
+  ymin =  0.0
+  ymax =  5.0
   xl_boundary_type = "inflow_ins"
   xr_boundary_type = "outflow_ins"
   yl_boundary_type = "noslip_ins"
@@ -46,12 +46,12 @@
   gr_amrexMG_composite_solve = true
   gr_amrexMG_Tol = 1.0e-13
   gr_amrexMG_max_iter = 200
-  nblockx = 16 #128
-  nblocky = 4 #32
+  nblockx = 8 #128
+  nblocky = 2 #32
   enableMaskedGCFill = true
   nrefs = 1000
   lrefine_min = 1
-  lrefine_max = 3
+  lrefine_max = 5
   flux_correct = true
   amrexFaceInterpolator = "face_div_free"
   refine_var_1 = "dfun"
@@ -93,7 +93,7 @@
   ht_Prandtl = 8.4
 
 [Driver]
-  restart = false
+  restart = true
   nend = 1200000
   tmax = 10
   dtinit = 0.1e-3
@@ -103,7 +103,7 @@
 
 [IO]
   basenm = "INS_Flow_Boiling_"
-  checkpointFileIntervalTime = 1.0
+  checkpointFileIntervalTime = 2.0
   plotFileIntervalTime = 0.1
   checkpointFileNumber = 0
   rolling_checkpoint = 2
@@ -113,4 +113,5 @@
   plot_var_3 = "vely"
   plot_var_4 = "dfun"
   plot_var_5 = "temp"
+  plot_var_6 = "mflx"
   ignoreForcedPlot = true
