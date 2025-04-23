@@ -1,6 +1,7 @@
 # cache the value of current working directory
 
-FlashSha="adhruv/development"
+#FlashSha="adhruv/development"
+FlashSha="92a5adbc3"
 
 FlashOptions="incompFlow/FlowBoiling -auto -maxblocks=1000 -2d -nxb=8 -nyb=8 \
               +amrex +serialIO +nolwf -site=$SiteHome +incomp \
