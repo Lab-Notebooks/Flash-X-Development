@@ -1,4 +1,12 @@
-# Input file to set runtime parameters
+# Input file for running flow boiling simulations in a channel with constant heat flux
+# boundary conditions. Following heater parameters are redundant for running simulations
+# for this configuration with Flash-X tag 55157877a:
+#
+# wallTemp, varTempFlg, C0-C3, nucTemp.
+#
+# These parameters are only required for compilation and compatibility purposes. The
+# non-dimensional CHF for this configuration is 50, therefore a configuration at 20% of CHF
+# will result in heatFlux = 10
 
 [Heater]
   htr_heaterName = "flow_boiling"
@@ -13,11 +21,11 @@
   zmin =  0.0
   zmax =  7.0
   wallTemp = 1.0
-  advAngle = 70.0
+  advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 0.2
-  numSites = 400
+  nucWaitTime = 1.0
+  numSites = 100
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -36,11 +44,11 @@
   zmin = 0.0
   zmax = 3.5
   wallTemp = 1.0
-  advAngle = 70.0
+  advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 0.2
-  numSites = 400
+  nucWaitTime = 1.0
+  numSites = 100
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -111,7 +119,7 @@
   mph_invWeber = 1.0
   mph_thcoGas = 0.25
   mph_CpGas = 0.83
-  mph_Stefan = 0.4
+  mph_Stefan = 0.5
   mph_Tsat = 0.05
   mph_presTol = 0.01
   mph_tempTol = 0.01
