@@ -9,7 +9,7 @@ from matplotlib.colors import LogNorm
 metadata = dict(title='INS Flow Boiling', artist='Matplotlib', comment='Fluid visualization')
 writer = PillowWriter(fps=5, metadata=metadata)
 
-filetags = [*range(135)]
+filetags = [*range(9,10)]
 
 delta = 0.039
 nx_bins = 2000 #int(2.5/delta)  # Resolution for the interpolation
@@ -47,8 +47,8 @@ with writer.saving(fig, "INS_Flow_Boiling_Video.gif", dpi=300):
         ax.set_xlim([x.min(), x.max()])
         ax.set_ylim([y.min(), y.max()])
         ax.set_aspect('equal', adjustable='box')
-        xticks = [0, 30, 60]
-        yticks = [0, 2.5]
+        xticks = [0, 80, 160]
+        yticks = [0, 7]
         ax.set_xticks(xticks)
         ax.set_yticks(yticks)
 	# Set custom labels scaled by 0.7
@@ -57,5 +57,5 @@ with writer.saving(fig, "INS_Flow_Boiling_Video.gif", dpi=300):
         ax.set_xlabel(r"mm")
         ax.set_ylabel(r"mm")
         #ax.set_title(f"time = {ftag*0.1*8.5:5.1f} ms, t_nuc = {0.2*8.5:5.1f} ms")
-        ax.set_title(rf"$t_{{\mathrm{{sim}}}} = {ftag*0.1*8.5:5.1f}\ \mathrm{{ms}},\ t_{{\mathrm{{nuc}}}} = {0.8*8.5:5.1f}\ \mathrm{{ms}}$")
+        #ax.set_title(rf"$t_{{\mathrm{{sim}}}} = {ftag*0.1*8.5:5.1f}\ \mathrm{{ms}},\ t_{{\mathrm{{nuc}}}} = {0.8*8.5:5.1f}\ \mathrm{{ms}}$")
         writer.grab_frame()
