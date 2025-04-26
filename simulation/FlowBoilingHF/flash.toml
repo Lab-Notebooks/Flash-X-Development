@@ -24,8 +24,8 @@
   advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 1.0
-  numSites = 100
+  nucWaitTime = 2.0
+  numSites = 200
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -47,8 +47,8 @@
   advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 1.0
-  numSites = 100
+  nucWaitTime = 2.0
+  numSites = 200
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0

@@ -9,17 +9,30 @@
 
 import numpy
 
-heatFluxRatioCHF = 0.2
-siteDensity = heatFluxRatioCHF*3.2
-heaterArea = 161.
+# Heat flux ratio for each configuration
+heatFluxRatio = 0.2
+
+# Fluid parameters
 Re = 238
 Pr = 8.4
 St = 0.5
-heatFlux = heatFluxRatioCHF*50
 rhoGas = 0.0083
 
+# Heurisitc assignment of site density
+maxSiteDensity = 6
+
+# Non-dimensional critical heat flux and heater area
+heatFluxCHF = 50
+heaterArea = 161.*1.
+
+# Linear scaling for heat flux and site density
+heatFlux = heatFluxRatio*heatFluxCHF
+siteDensity = heatFluxRatio*maxSiteDensity
+
+# Calculation of wait time and number of sites from the formula
 nucWaitTime = (numpy.pi / 6) * (siteDensity) * (rhoGas * Re * Pr) / (St * heatFlux)
+numSites = siteDensity*heaterArea
 
 print(f"nucWaitTime: {nucWaitTime}")
-print(f"numSites : {siteDensity*heaterArea}")
+print(f"numSites : {numSites}")
 print(f"heatFlux : {heatFlux}")
