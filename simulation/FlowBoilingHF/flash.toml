@@ -7,17 +7,17 @@
 
 [Heater.0001]
   xmin =  0.0
-  xmax = 60.0
+  xmax =  161.0
   ymin =  0.0
   ymax =  1e-13
   zmin =  0.0
-  zmax =  2.5
+  zmax =  7.0
   wallTemp = 1.0
   advAngle = 70.0
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 0.2
-  numSites = 200
+  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -30,17 +30,17 @@
 
 [Heater.0002]
   xmin =  0.0
-  xmax = 60.0
-  ymin = 24999888888888e-13
-  ymax = 2.5
+  xmax = 161.0
+  ymin = 69999888888888e-13
+  ymax = 7.0
   zmin = 0.0
-  zmax = 2.5
+  zmax = 3.5
   wallTemp = 1.0
   advAngle = 70.0
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 0.2
-  numSites = 200
+  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -58,11 +58,11 @@
 [Grid]
   geometry = "cartesian"
   xmin =  0.0
-  xmax =  60.0
+  xmax =  161.0
   ymin =  0.0
-  ymax =  2.5
+  ymax =  7.0
   zmin =  0.0
-  zmax =  2.5
+  zmax =  3.5
   xl_boundary_type = "inflow_ins"
   xr_boundary_type = "outflow_ins"
   yl_boundary_type = "noslip_ins"
@@ -72,8 +72,8 @@
   gr_amrexMG_composite_solve = true
   gr_amrexMG_Tol = 1.0e-11
   gr_amrexMG_max_iter = 200
-  nblockx = 24
-  nblocky = 1
+  nblockx = 46
+  nblocky = 2
   nblockz = 1
   enableMaskedGCFill = true
   nrefs = 1000
@@ -100,8 +100,9 @@
   out_buffer = 2.0
 
 [Simulation]
-  sim_lengthScaleMeters = 0.001
-  sim_timeScaleSeconds = 0.01
+  sim_lengthScaleMeters = 7e-4
+  sim_timeScaleSeconds = 8.7e-3
+  sim_tempScaleExpr = "40*T + 60"
 
 [Multiphase]
   mph_rhoGas = 0.0083
@@ -130,7 +131,7 @@
 [IO]
   basenm = "INS_Flow_Boiling_"
   checkpointFileIntervalTime = 2.0
-  plotFileIntervalTime = 0.1
+  plotFileIntervalTime = 1.0
   checkpointFileNumber = 0
   rolling_checkpoint = 2
   plotFileNumber = 0
