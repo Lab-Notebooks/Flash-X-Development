@@ -8,15 +8,19 @@
 # t = (pi*Nd)/6 * (rho'*Re*Pr)/(St*Nu_wall)
 
 import numpy
+import toml
 
 # Heat flux ratio for each configuration
 heatFluxRatio = 0.2
 
+# Load flash.toml to get parameters
+params = toml.load("flash.toml")
+
 # Fluid parameters
-Re = 238
-Pr = 8.4
-St = 0.5
-rhoGas = 0.0083
+Re = 1./params["IncompNS"]["ins_invReynolds"]
+Pr = params["HeatAD"]["ht_Prandtl"]
+St = params["Multiphase"]["mph_Stefan"]
+rhoGas = params["Multiphase"]["mph_rhoGas"]
 
 # Heurisitc assignment of site density
 maxSiteDensity = 6

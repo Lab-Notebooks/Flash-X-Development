@@ -9,7 +9,7 @@
 # at 20% of CHF will result in heatFlux = 10. The working fluid is assumed to be FC-72, with 
 # saturation temperature of 62 degree Celsius and the bulk temperature is 60 degree Celsius.
 #
-# Calcluation of the nucleation wait time, and number of sites is available in params.py
+# Calcluation of the nucleation wait time, and number of sites is available in nucpar.py
 
 [Heater]
   htr_heaterName = "flow_boiling"
