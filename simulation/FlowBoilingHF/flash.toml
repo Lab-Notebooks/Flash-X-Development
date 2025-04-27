@@ -22,7 +22,7 @@
   ymin =  0.0
   ymax =  1e-13
   zmin =  0.0
-  zmax =  7.0
+  zmax =  3.5
   wallTemp = 1.0
   advAngle = 70.0
   rcdAngle = 45.0
