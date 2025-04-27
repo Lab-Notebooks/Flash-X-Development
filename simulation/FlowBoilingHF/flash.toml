@@ -5,8 +5,8 @@
 # wallTemp, varTempFlg, C0-C3, nucTemp.
 #
 # These parameters are only required for compilation and compatibility purposes. The
-# non-dimensional CHF for this configuration is 50 (16 W/cm**2), therefore a configuration 
-# at 20% of CHF will result in heatFlux = 10. The working fluid is assumed to be FC-72, with 
+# non-dimensional CHF for this configuration is 60 (16.7 W/cm**2), therefore a configuration 
+# at 16% of CHF will result in heatFlux = 10. The working fluid is assumed to be FC-72, with 
 # saturation temperature of 62 degree Celsius and the bulk temperature is 60 degree Celsius.
 #
 # Calcluation of the nucleation wait time, and number of sites is available in nucpar.py
