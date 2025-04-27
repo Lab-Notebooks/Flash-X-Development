@@ -6,12 +6,20 @@
 # E  - Heat removed per bubble (4*pi/3)*hfg*(Rd**3), Rd is departure radius (lo/2)
 # q  - Wall heat flux
 #
+# See Equation 2 in:
+#
+# Basu, Nilanjana & Warrier, Gopinath & Dhir, V.K.. (2005).
+# Wall Heat Flux Partitioning During Subcooled Flow Boiling: Part 1—Model Development.
+# Journal of Heat Transfer-transactions of The Asme - J HEAT TRANSFER. 127. 10.1115/1.1842784.
+#
 # After non-dimensionalization:
 #
 # 1/f = (pi*Nd)/6 * (rho'*Re*Pr)/(St*Nu_wall)
 #
-# t_growth = (3/4)*(1/f)
-# t_wait = 1/f - (3/4)*(1/f)
+# Using empirical assumptions:
+#
+# t_growth = (1/4)*(1/f)
+# t_wait   = (3/4)*(1/f)
 
 import numpy
 import toml
@@ -29,7 +37,7 @@ St = params["Multiphase"]["mph_Stefan"]
 rhoGas = params["Multiphase"]["mph_rhoGas"]
 
 # Heurisitc assignment of site density
-maxSiteDensity = 10
+maxSiteDensity = 6
 
 # Non-dimensional critical heat flux and heater area
 heatFluxCHF = 50
@@ -42,8 +50,8 @@ numSites = siteDensity*heaterArea
 
 # Calculation of depature, growth, and wait times
 bubbleFrequency = (St*heatFlux)/(numpy.pi/6)/(siteDensity)/(rhoGas*Re*Pr)
-nucGrowthTime = (3./4)/bubbleFrequency
-nucWaitTime = (1./4)/bubbleFrequency
+nucWaitTime = (3./4)/bubbleFrequency
+nucGrowthTime = (1./4)/bubbleFrequency
 
 print(f"nucWaitTime: {nucWaitTime}")
 print(f"numSites : {numSites}")
