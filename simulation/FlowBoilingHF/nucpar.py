@@ -25,9 +25,6 @@
 import numpy
 import toml
 
-# Heat flux ratio for each configuration
-heatFluxRatio = 0.166
-
 # Load flash.toml to get parameters
 params = toml.load("flash.toml")
 
@@ -40,21 +37,38 @@ rhoGas = params["Multiphase"]["mph_rhoGas"]
 # Heurisitc assignment of site density
 maxSiteDensity = 7.5
 
-# Non-dimensional critical heat flux and heater area
+# Non-dimensional critical heat flux
 heatFluxCHF = 60.
-heaterArea = 161.*1.
 
-# Linear scaling for heat flux and site density
-heatFlux = heatFluxRatio*heatFluxCHF
-siteDensity = heatFluxRatio*maxSiteDensity
-numSites = siteDensity*heaterArea
+# Loop over each heater configuration to
+# calculate num sites, and wait time
+for key, info in params["Heater"].items():
 
-# Calculation of depature, growth, and wait times
-bubbleFrequency = (St*heatFlux)/(numpy.pi/6)/(siteDensity)/(rhoGas*Re*Pr)
-nucWaitTime = (3./4)/bubbleFrequency
-nucGrowthTime = (1./4)/bubbleFrequency
+    # Only do computations if info is of type dictionary.
+    # This is where heater configuration is stored
+    if type(info) == dict:
 
-print(f"nucWaitTime: {round(nucWaitTime,1)}")
-print(f"siteDensity: {round(siteDensity,1)}")
-print(f"numSites:    {int(numSites)}")
-print(f"heatFlux:    {round(heatFlux,1)}")
+        # Read heat flux and compute heat flux ratio to CHF
+        heatFlux = info["heatFlux"]
+        heatFluxRatio = heatFlux/heatFluxCHF
+
+        # Compute 2D and 3D heater areas
+        heaterArea2D = (info["xmax"]-info["xmin"])
+        heaterArea3D = heaterArea2D*(info["zmax"]-info["zmin"])
+
+        # Linear scaling for site density to calculate numSites
+        siteDensity = heatFluxRatio*maxSiteDensity
+        numSites2D = siteDensity*heaterArea2D
+        numSites3D = siteDensity*heaterArea3D
+
+        # Calculation of depature, growth, and wait times
+        bubbleFrequency = (St*heatFlux)/(numpy.pi/6)/(siteDensity)/(rhoGas*Re*Pr)
+        nucWaitTime = (3./4)/bubbleFrequency
+        nucGrowthTime = (1./4)/bubbleFrequency
+
+        print(f"Heater.{key}.siteDensity:   {round(siteDensity,1)}")
+        print(f"Heater.{key}.heatFluxRatio: {round(heatFluxRatio,3)*100}%")
+        print(f"Heater.{key}.nucWaitTime:   {round(nucWaitTime,1)}")
+        print(f"Heater.{key}.numSites2D:    {int(numSites2D)}")
+        print(f"Heater.{key}.numSites3D:    {int(numSites3D)}")
+        print("------------------------------------------------")
