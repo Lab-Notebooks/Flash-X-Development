@@ -67,7 +67,7 @@ for key, info in params["Heater"].items():
         nucGrowthTime = (1./4)/bubbleFrequency
 
         print(f"Heater.{key}.siteDensity:   {round(siteDensity,1)}")
-        print(f"Heater.{key}.heatFluxRatio: {round(heatFluxRatio,3)*100}%")
+        print(f"Heater.{key}.heatFluxRatio: {round(heatFluxRatio*100,1)}%")
         print(f"Heater.{key}.nucWaitTime:   {round(nucWaitTime,1)}")
         print(f"Heater.{key}.numSites2D:    {int(numSites2D)}")
         print(f"Heater.{key}.numSites3D:    {int(numSites3D)}")
