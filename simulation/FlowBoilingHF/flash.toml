@@ -10,6 +10,14 @@
 # saturation temperature of 62 degree Celsius and the bulk temperature is 60 degree Celsius.
 #
 # Calcluation of the nucleation wait time, and number of sites is available in nucpar.py
+#
+# REFERENCE:
+#
+# V.S. Devahdhanush, Issam Mudawar, Henry K. Nahra, R. Balasubramaniam, Mohammad M. Hasan, Jeffrey R. Mackey,
+# Experimental heat transfer results and flow visualization of vertical upflow boiling in Earth gravity with
+# subcooled inlet conditions – In preparation for experiments onboard the International Space Station,
+# International Journal of Heat and Mass Transfer, Volume 188, 2022, 122603, ISSN 0017-9310,
+# https://doi.org/10.1016/j.ijheatmasstransfer.2022.122603.
 
 [Heater]
   htr_heaterName = "flow_boiling"
@@ -28,7 +36,7 @@
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
-  numSites = 400
+  numSites = 800
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -36,7 +44,7 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 20.0
+  heatFlux = 40.0
   nucTemp = 1.0
 
 [Heater.0002]
@@ -51,7 +59,7 @@
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
-  numSites = 400
+  numSites = 800
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -59,7 +67,7 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 20.0
+  heatFlux = 40.0
   nucTemp = 1.0
 
 [Logfile]
