@@ -40,8 +40,8 @@ numSites = siteDensity*heaterArea
 
 # Calculation of depature, growth, and wait times
 nucDepartureTime = (numpy.pi/6)*(siteDensity)*(rhoGas*Re*Pr)/(St*heatFlux)
-nucGrowthTime = (3./4) * nucDepartureTime
-nucWaitTime = nucDepartureTime - nucGrowthTime
+nucGrowthTime = (3./4)*nucDepartureTime
+nucWaitTime = nucDepartureTime-nucGrowthTime
 
 print(f"nucWaitTime: {nucWaitTime}")
 print(f"numSites : {numSites}")
