@@ -1,15 +1,17 @@
-# Nucleation wait time formula calculated from the relationship t_d = Nd*E/q, where:
-# t_d - Bubble departure time
-# Nd - Site density - number of sites per m**2
-# E - Heat removed per bubble (4*pi/3)*hfg*(Rd**3), Rd is departure radius
-# q - Wall heat flux
+# Nucleation wait time formula calculated from the relationship 
+# f  = q/(Nd*E), where:
 #
-# After non-dimensionalization. The formula for twait comes out as:
+# f  - Bubble frequency
+# Nd - Site density, number of sites per m**2
+# E  - Heat removed per bubble (4*pi/3)*hfg*(Rd**3), Rd is departure radius (lo/2)
+# q  - Wall heat flux
 #
-# t_d = (pi*Nd)/6 * (rho'*Re*Pr)/(St*Nu_wall)
+# After non-dimensionalization:
 #
-# t_growth = 3*t_d/4
-# t_wait = t_d - t_growth = t_d/4
+# 1/f = (pi*Nd)/6 * (rho'*Re*Pr)/(St*Nu_wall)
+#
+# t_growth = (3/4)*(1/f)
+# t_wait = 1/f - (3/4)*(1/f)
 
 import numpy
 import toml
@@ -39,9 +41,9 @@ siteDensity = heatFluxRatio*maxSiteDensity
 numSites = siteDensity*heaterArea
 
 # Calculation of depature, growth, and wait times
-nucDepartureTime = (numpy.pi/6)*(siteDensity)*(rhoGas*Re*Pr)/(St*heatFlux)
-nucGrowthTime = (3./4)*nucDepartureTime
-nucWaitTime = nucDepartureTime-nucGrowthTime
+bubbleFrequency = (St*heatFlux)/(numpy.pi/6)/(siteDensity)/(rhoGas*Re*Pr)
+nucGrowthTime = (3./4)/bubbleFrequency
+nucWaitTime = (1./4)/bubbleFrequency
 
 print(f"nucWaitTime: {nucWaitTime}")
 print(f"numSites : {numSites}")
