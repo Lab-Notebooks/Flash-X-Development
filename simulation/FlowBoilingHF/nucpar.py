@@ -3,7 +3,8 @@
 #
 # f  - Bubble frequency
 # Nd - Site density, number of sites per m**2
-# E  - Heat removed per bubble (4*pi/3)*hfg*(Rd**3), Rd is departure radius (lo/2)
+# E  - Heat removed per bubble (4*pi/3)*rho_v*hfg*(Rd**3)
+# Rd - Departure radius (capillary_length/2)
 # q  - Wall heat flux
 #
 # See Equation 2 in:
@@ -14,7 +15,7 @@
 #
 # After non-dimensionalization:
 #
-# 1/f = (pi*Nd)/6 * (rho'*Re*Pr)/(St*Nu_wall)
+# 1/f = (pi*Nd)/6*(rho'*Re*Pr)/(St*Nu_wall)
 #
 # Using empirical assumptions:
 #
