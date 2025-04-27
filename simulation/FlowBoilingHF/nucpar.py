@@ -38,11 +38,11 @@ St = params["Multiphase"]["mph_Stefan"]
 rhoGas = params["Multiphase"]["mph_rhoGas"]
 
 # Heurisitc assignment of site density
-maxSiteDensity = 6
+maxSiteDensity = 6.
 
 # Non-dimensional critical heat flux and heater area
-heatFluxCHF = 50
-heaterArea = 161.0*1.0
+heatFluxCHF = 50.
+heaterArea = 161.*1.
 
 # Linear scaling for heat flux and site density
 heatFlux = heatFluxRatio*heatFluxCHF
@@ -54,6 +54,7 @@ bubbleFrequency = (St*heatFlux)/(numpy.pi/6)/(siteDensity)/(rhoGas*Re*Pr)
 nucWaitTime = (3./4)/bubbleFrequency
 nucGrowthTime = (1./4)/bubbleFrequency
 
-print(f"nucWaitTime: {nucWaitTime}")
-print(f"numSites : {numSites}")
-print(f"heatFlux : {heatFlux}")
+print(f"nucWaitTime: {round(nucWaitTime,1)}")
+print(f"siteDensity: {round(siteDensity,1)}")
+print(f"numSites:    {int(numSites)}")
+print(f"heatFlux:    {round(heatFlux,1)}")
