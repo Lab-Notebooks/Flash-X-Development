@@ -35,10 +35,10 @@ St = params["Multiphase"]["mph_Stefan"]
 rhoGas = params["Multiphase"]["mph_rhoGas"]
 
 # Heurisitc assignment of site density
-maxSiteDensity = 7.5
+maxSiteDensity = 7.
 
 # Non-dimensional critical heat flux
-heatFluxCHF = 60.
+heatFluxCHF = 56.
 
 # Loop over each heater configuration to
 # calculate num sites, and wait time

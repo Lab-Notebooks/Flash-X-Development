@@ -28,7 +28,7 @@
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
-  numSites = 200
+  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -36,7 +36,7 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 10.0
+  heatFlux = 20.0
   nucTemp = 1.0
 
 [Heater.0002]
@@ -51,7 +51,7 @@
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
-  numSites = 200
+  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -59,7 +59,7 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 10.0
+  heatFlux = 20.0
   nucTemp = 1.0
 
 [Logfile]
@@ -111,8 +111,8 @@
   out_buffer = 2.0
 
 [Simulation]
-  sim_lengthScaleMeters = 7e-4
-  sim_timeScaleSeconds = 8.7e-3
+  sim_lengthScaleMeters = 7.3e-4
+  sim_timeScaleSeconds = 8.6e-3
   sim_tempScaleExpr = "40*T + 60"
 
 [Multiphase]
