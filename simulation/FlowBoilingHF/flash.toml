@@ -34,7 +34,7 @@
   C2 = 0.0
   C1 = 0.004
   C0 = 0.9 
-  tblThickness = 0.2
+  tblThickness = 0.1
   heatFluxFlg = true
   heatFlux = 10.0
   nucTemp = 1.0
@@ -57,7 +57,7 @@
   C2 = 0.0
   C1 = 0.004
   C0 = 0.9 
-  tblThickness = 0.2
+  tblThickness = 0.1
   heatFluxFlg = true
   heatFlux = 10.0
   nucTemp = 1.0
