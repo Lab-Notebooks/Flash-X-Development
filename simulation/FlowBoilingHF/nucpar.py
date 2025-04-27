@@ -26,7 +26,7 @@ import numpy
 import toml
 
 # Heat flux ratio for each configuration
-heatFluxRatio = 0.2
+heatFluxRatio = 0.166
 
 # Load flash.toml to get parameters
 params = toml.load("flash.toml")
@@ -38,10 +38,10 @@ St = params["Multiphase"]["mph_Stefan"]
 rhoGas = params["Multiphase"]["mph_rhoGas"]
 
 # Heurisitc assignment of site density
-maxSiteDensity = 6.
+maxSiteDensity = 7.5
 
 # Non-dimensional critical heat flux and heater area
-heatFluxCHF = 50.
+heatFluxCHF = 60.
 heaterArea = 161.*1.
 
 # Linear scaling for heat flux and site density
