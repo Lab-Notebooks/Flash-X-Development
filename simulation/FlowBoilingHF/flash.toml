@@ -91,7 +91,7 @@
   enableMaskedGCFill = true
   nrefs = 1000
   lrefine_min = 1
-  lrefine_max = 3
+  lrefine_max = 4
   flux_correct = true
   amrexFaceInterpolator = "face_div_free"
   refine_var_1 = "dfun"
