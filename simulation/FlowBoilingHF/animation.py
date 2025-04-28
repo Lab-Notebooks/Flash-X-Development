@@ -9,7 +9,7 @@ from matplotlib.colors import LogNorm
 metadata = dict(title='INS Flow Boiling', artist='Matplotlib', comment='Fluid visualization')
 writer = PillowWriter(fps=5, metadata=metadata)
 
-filetags = [*range(9,10)]
+filetags = [*range(14,15)]
 
 delta = 0.039
 nx_bins = 2000 #int(2.5/delta)  # Resolution for the interpolation
@@ -27,7 +27,7 @@ contourf_plot = [None]  # use list to hold reference
 
 with writer.saving(fig, "INS_Flow_Boiling_Video.gif", dpi=300):
     for ftag in filetags:
-        filename = f"INS_Flow_Boiling_hdf5_plt_cnt_{str(ftag).zfill(4)}"
+        filename = f"jobnode.archive/run-2d-exp-ch17/INS_Flow_Boiling_hdf5_plt_cnt_{str(ftag).zfill(4)}"
         dataset = yt.load(filename)
         region = dataset.all_data()
 
@@ -39,11 +39,15 @@ with writer.saving(fig, "INS_Flow_Boiling_Video.gif", dpi=300):
             y_bins = numpy.linspace(y.min(), y.max(), ny_bins)
             X, Y = numpy.meshgrid(x_bins, y_bins)
 
-        Z = griddata((x, y), region["dfun"], (X, Y), method='linear')
+        dfun = griddata((x, y), region["dfun"], (X, Y), method='linear')
+        temp = griddata((x, y), region["temp"], (X, Y), method='linear')
+        temp = numpy.where(temp <= 0, 1e-4, temp)
 
         ax.clear()
-        contourf = ax.contourf(X, Y, Z, levels=[-0.001, 0.001], extend='both', cmap='Greens')
-        #contourf = ax.contourf(X, Y, Z, levels=numpy.linspace(0.001,10.,100), extend='Greens', cmap='jet', norm = LogNorm())
+
+        contourf = ax.contourf(X, Y, dfun, levels=[-0.001, 0.001], extend='both', cmap='Greens')
+        #contourf = ax.contourf(X, Y, temp, levels=numpy.linspace(1e-4,10.,100), extend='both', cmap='Greens', norm = LogNorm())
+        #contour = ax.contour(X, Y, dfun, levels=[0], linecolor='k', linewidths=0.5)
         ax.set_xlim([x.min(), x.max()])
         ax.set_ylim([y.min(), y.max()])
         ax.set_aspect('equal', adjustable='box')
