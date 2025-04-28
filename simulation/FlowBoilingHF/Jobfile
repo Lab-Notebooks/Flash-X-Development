@@ -6,6 +6,7 @@ job:
     - flashOptions.sh
     - flashBuild.sh
   submit:
+    - flashOptions.sh
     - calResources.sh
     - flashRun.sh
   input:

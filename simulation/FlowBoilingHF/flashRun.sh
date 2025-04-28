@@ -8,7 +8,7 @@ cd $FLASHX_HOME && echo Flash-X HEAD is at $(git rev-parse --short HEAD)
 cd $FLASHX_HOME && git checkout $FlashSha && ./setup $FlashOptions
 
 # compile the simulation and copy files
-cp flash.par $JobWorkDir/ && cp *hdf5_htr* $JobWorkDir/
+cp object/flash.par $JobWorkDir/ && cp object/*hdf5_htr* $JobWorkDir/
 
 # Run the actualy job using this target script
 if [[ $SiteName == "summit/gcc-10.2.0" || $SiteName == "summit/gcc-9.3.0" ]]; then
