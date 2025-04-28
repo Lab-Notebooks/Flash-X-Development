@@ -15,7 +15,7 @@
 #
 # After non-dimensionalization:
 #
-# 1/f = (Rd*3)*(4*pi*Nd)/3*(rho'*Re*Pr)/(St*Nu_wall)
+# 1/f = (Rd*3)*(4*pi*Nd/3)*(rho'*Re*Pr)/(St*Nu_wall)
 #
 # The non-dimensional value of Rd is calculated using:
 #
@@ -61,7 +61,7 @@ maxSiteDensity = 6.
 heatFluxCHF = 56.
 
 # Set heat flux ratio and compute heat flux
-heatFluxRatio = .9628
+heatFluxRatio = .2275
 heatFlux = heatFluxRatio*heatFluxCHF
 
 # Compute 2D and 3D heater areas
@@ -77,7 +77,7 @@ numSites3D = siteDensity*heaterArea3D
 Rd = 0.4251*psi*numpy.sqrt(2*Bo)
 
 # Calculation of depature, growth, and wait times
-bubbleFrequency = (St*heatFlux)/(4*(Rd**3)*numpy.pi/3)/(siteDensity)/(rhoGas*Re*Pr)
+bubbleFrequency = (St*heatFlux)/(rhoGas*Re*Pr)/(4*siteDensity*numpy.pi/3)/(Rd**3)
 nucWaitTime = (3./4)/bubbleFrequency
 nucGrowthTime = (1./4)/bubbleFrequency
 
