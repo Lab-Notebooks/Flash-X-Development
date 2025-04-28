@@ -61,7 +61,7 @@ maxSiteDensity = 6.
 heatFluxCHF = 56.
 
 # Set heat flux ratio and compute heat flux
-heatFluxRatio = .2275
+heatFluxRatio = .9628
 heatFlux = heatFluxRatio*heatFluxCHF
 
 # Compute 2D and 3D heater areas
@@ -86,4 +86,3 @@ print(f"heatFlux:    {round(heatFlux,1)}")
 print(f"nucWaitTime: {round(nucWaitTime,1)}")
 print(f"numSites2D:  {int(numSites2D)}")
 print(f"numSites3D:  {int(numSites3D)}")
-

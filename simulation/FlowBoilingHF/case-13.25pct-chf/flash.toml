@@ -19,9 +19,9 @@
   tblThickness = 0.1
   heatFluxFlg = true
   nucTemp = 1.0
-  nucWaitTime = 1.6
-  numSites = 191
-  heatFlux = 9.5
+  nucWaitTime = 1.2
+  numSites = 127
+  heatFlux = 7.4
 
 [Heater.0002]
   xmin =  0.0
@@ -42,6 +42,6 @@
   tblThickness = 0.1
   heatFluxFlg = true
   nucTemp = 1.0
-  nucWaitTime = 1.6
-  numSites = 191
-  heatFlux = 9.5
+  nucWaitTime = 1.2
+  numSites = 127
+  heatFlux = 7.4

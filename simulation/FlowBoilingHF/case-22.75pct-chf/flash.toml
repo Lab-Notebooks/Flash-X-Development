@@ -1,0 +1,47 @@
+# Configuration file
+
+[Heater.0001]
+  xmin =  0.0
+  xmax =  161.0
+  ymin =  0.0
+  ymax =  1e-13
+  zmin =  0.0
+  zmax =  3.5
+  wallTemp = 1.0
+  advAngle = 90.0
+  rcdAngle = 45.0
+  velContact = 0.2
+  varTempFlg = false
+  C3 = 0.0 
+  C2 = 0.0
+  C1 = 0.004
+  C0 = 0.9 
+  tblThickness = 0.1
+  heatFluxFlg = true
+  nucTemp = 1.0
+  nucWaitTime = 1.2
+  numSites = 219
+  heatFlux = 12.7
+
+[Heater.0002]
+  xmin =  0.0
+  xmax = 161.0
+  ymin = 69999888888888e-13
+  ymax = 7.0
+  zmin = 0.0
+  zmax = 3.5
+  wallTemp = 1.0
+  advAngle = 90.0
+  rcdAngle = 45.0
+  velContact = 0.2
+  varTempFlg = false
+  C3 = 0.0 
+  C2 = 0.0
+  C1 = 0.004
+  C0 = 0.9 
+  tblThickness = 0.1
+  heatFluxFlg = true
+  nucTemp = 1.0
+  nucWaitTime = 1.2
+  numSites = 219
+  heatFlux = 12.7
