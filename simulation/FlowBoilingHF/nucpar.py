@@ -17,7 +17,7 @@
 #
 # 1/f = (pi*Nd)/6*(rho'*Re*Pr)/(St*Nu_wall)
 #
-# Using empirical assumptions from:
+# Using empirical assumptions from Equation 44 in:
 #
 # Xiao, L.; Zhuang, Y.; Wu, X.; Yang, J.; Lu, Y.; Liu, Y.;
 # Han, X. A Review of Pool-Boiling Processes Based on Bubble-Dynamics Parameters.
