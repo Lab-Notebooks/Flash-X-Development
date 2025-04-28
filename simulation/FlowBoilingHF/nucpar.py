@@ -48,9 +48,9 @@ for key, info in params["Heater"].items():
     # This is where heater configuration is stored
     if type(info) == dict:
 
-        # Read heat flux and compute heat flux ratio to CHF
-        heatFlux = info["heatFlux"]
-        heatFluxRatio = heatFlux/heatFluxCHF
+        # Set heat flux ratio and compute heat flux
+        heatFluxRatio = .70
+        heatFlux = heatFluxRatio*heatFluxCHF
 
         # Compute 2D and 3D heater areas
         heaterArea2D = (info["xmax"]-info["xmin"])
@@ -66,9 +66,9 @@ for key, info in params["Heater"].items():
         nucWaitTime = (3./4)/bubbleFrequency
         nucGrowthTime = (1./4)/bubbleFrequency
 
-        print(f"Heater.{key}.siteDensity:   {round(siteDensity,1)}")
-        print(f"Heater.{key}.heatFluxRatio: {round(heatFluxRatio*100,1)}%")
-        print(f"Heater.{key}.nucWaitTime:   {round(nucWaitTime,1)}")
-        print(f"Heater.{key}.numSites2D:    {int(numSites2D)}")
-        print(f"Heater.{key}.numSites3D:    {int(numSites3D)}")
+        print(f"Heater.{key}.siteDensity: {round(siteDensity,1)}")
+        print(f"Heater.{key}.heatFlux:    {round(heatFlux,1)}")
+        print(f"Heater.{key}.nucWaitTime: {round(nucWaitTime,1)}")
+        print(f"Heater.{key}.numSites2D:  {int(numSites2D)}")
+        print(f"Heater.{key}.numSites3D:  {int(numSites3D)}")
         print("------------------------------------------------")

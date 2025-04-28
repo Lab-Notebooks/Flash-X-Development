@@ -3,8 +3,7 @@
 FlashSha="15af86e76"
 
 FlashOptions="incompFlow/FlowBoiling -auto -maxblocks=1000 -2d -nxb=16 -nyb=16 \
-              +amrex +serialIO +nolwf -site=$SiteHome +incomp \
-              -tomlfile=$JobWorkDir/job.input HeaterFluxBC=True --with-unitmods"
+              +amrex +serialIO +nolwf -site=$SiteHome +incomp HeaterFluxBC=True"
 
 if [ $Profile = True ]; then
 	FlashOptions="$FlashOptions +hpctoolkit"

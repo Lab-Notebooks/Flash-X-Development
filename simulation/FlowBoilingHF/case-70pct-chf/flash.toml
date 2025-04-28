@@ -1,0 +1,11 @@
+# Configuration file
+
+[Heater.0001]
+  nucWaitTime = 1.6
+  numSites = 788
+  heatFlux = 39.2
+
+[Heater.0002]
+  nucWaitTime = 1.6
+  numSites = 788
+  heatFlux = 39.2

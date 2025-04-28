@@ -1,3 +1,15 @@
+# cache the value of current working directory
+NodeDir=$(realpath .)
+
+FlashOptions="$FlashOptions -tomlfile=$JobWorkDir/job.input --with-unitmods"
+
+# run Flash-X setup
+cd $FLASHX_HOME && echo Flash-X HEAD is at $(git rev-parse --short HEAD)
+cd $FLASHX_HOME && git checkout $FlashSha && ./setup $FlashOptions
+
+# compile the simulation and copy files
+cp flash.par $JobWorkDir/ && cp *hdf5_htr* $JobWorkDir/
+
 # Run the actualy job using this target script
 if [[ $SiteName == "summit/gcc-10.2.0" || $SiteName == "summit/gcc-9.3.0" ]]; then
 

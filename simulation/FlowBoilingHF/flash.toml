@@ -22,7 +22,7 @@
 [Heater]
   htr_heaterName = "flow_boiling"
   htr_numHeaters = 2
-  htr_nucSeedRadius = 0.075
+  htr_nucSeedRadius = 0.1
 
 [Heater.0001]
   xmin =  0.0
@@ -35,8 +35,6 @@
   advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 1.6
-  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -44,7 +42,6 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 20.0
   nucTemp = 1.0
 
 [Heater.0002]
@@ -58,8 +55,6 @@
   advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
-  nucWaitTime = 1.6
-  numSites = 400
   varTempFlg = false
   C3 = 0.0 
   C2 = 0.0
@@ -67,7 +62,6 @@
   C0 = 0.9 
   tblThickness = 0.1
   heatFluxFlg = true
-  heatFlux = 20.0
   nucTemp = 1.0
 
 [Logfile]
@@ -97,7 +91,7 @@
   enableMaskedGCFill = true
   nrefs = 1000
   lrefine_min = 1
-  lrefine_max = 4
+  lrefine_max = 3
   flux_correct = true
   amrexFaceInterpolator = "face_div_free"
   refine_var_1 = "dfun"
