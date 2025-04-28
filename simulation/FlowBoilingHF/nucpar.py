@@ -17,7 +17,11 @@
 #
 # 1/f = (pi*Nd)/6*(rho'*Re*Pr)/(St*Nu_wall)
 #
-# Using empirical assumptions:
+# Using empirical assumptions from:
+#
+# Xiao, L.; Zhuang, Y.; Wu, X.; Yang, J.; Lu, Y.; Liu, Y.;
+# Han, X. A Review of Pool-Boiling Processes Based on Bubble-Dynamics Parameters.
+# Appl. Sci. 2023, 13, 12026. https://doi.org/10.3390/app132112026
 #
 # t_growth = (1/4)*(1/f)
 # t_wait   = (3/4)*(1/f)
