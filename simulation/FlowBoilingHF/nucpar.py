@@ -81,8 +81,9 @@ bubbleFrequency = (St*heatFlux)/(rhoGas*Re*Pr)/(4*siteDensity*numpy.pi/3)/(Rd**3
 nucWaitTime = (3./4)/bubbleFrequency
 nucGrowthTime = (1./4)/bubbleFrequency
 
-print(f"siteDensity: {round(siteDensity,1)}")
-print(f"heatFlux:    {round(heatFlux,1)}")
-print(f"nucWaitTime: {round(nucWaitTime,1)}")
-print(f"numSites2D:  {int(numSites2D)}")
-print(f"numSites3D:  {int(numSites3D)}")
+print(f"siteDensity:   {round(siteDensity,1)}")
+print(f"heatFlux:      {round(heatFlux,1)}")
+print(f"nucWaitTime:   {round(nucWaitTime,1)}")
+print(f"nucGrowthTime: {round(nucGrowthTime,1)}")
+print(f"numSites2D:    {int(numSites2D)}")
+print(f"numSites3D:    {int(numSites3D)}")
