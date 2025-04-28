@@ -22,7 +22,7 @@
 [Heater]
   htr_heaterName = "flow_boiling"
   htr_numHeaters = 2
-  htr_nucSeedRadius = 0.1
+  htr_nucSeedRadius = 0.075
 
 [Heater.0001]
   xmin =  0.0
@@ -32,7 +32,7 @@
   zmin =  0.0
   zmax =  3.5
   wallTemp = 1.0
-  advAngle = 70.0
+  advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
@@ -55,7 +55,7 @@
   zmin = 0.0
   zmax = 3.5
   wallTemp = 1.0
-  advAngle = 70.0
+  advAngle = 90.0
   rcdAngle = 45.0
   velContact = 0.2
   nucWaitTime = 1.6
@@ -97,7 +97,7 @@
   enableMaskedGCFill = true
   nrefs = 1000
   lrefine_min = 1
-  lrefine_max = 3
+  lrefine_max = 4
   flux_correct = true
   amrexFaceInterpolator = "face_div_free"
   refine_var_1 = "dfun"

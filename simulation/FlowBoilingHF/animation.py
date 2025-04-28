@@ -9,7 +9,7 @@ from matplotlib.colors import LogNorm
 metadata = dict(title='INS Flow Boiling', artist='Matplotlib', comment='Fluid visualization')
 writer = PillowWriter(fps=5, metadata=metadata)
 
-filetags = [*range(14,15)]
+filetags = [*range(16,17)]
 
 delta = 0.039
 nx_bins = 2000 #int(2.5/delta)  # Resolution for the interpolation
@@ -27,7 +27,7 @@ contourf_plot = [None]  # use list to hold reference
 
 with writer.saving(fig, "INS_Flow_Boiling_Video.gif", dpi=300):
     for ftag in filetags:
-        filename = f"jobnode.archive/run-2d-exp-ch17/INS_Flow_Boiling_hdf5_plt_cnt_{str(ftag).zfill(4)}"
+        filename = f"INS_Flow_Boiling_hdf5_plt_cnt_{str(ftag).zfill(4)}"
         dataset = yt.load(filename)
         region = dataset.all_data()
 
