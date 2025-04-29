@@ -52,8 +52,9 @@ Pr = params["HeatAD"]["ht_Prandtl"]
 St = params["Multiphase"]["mph_Stefan"]
 rhoGas = params["Multiphase"]["mph_rhoGas"]
 Bo = params["Multiphase"]["mph_invWeber"]/numpy.sqrt(params["IncompNS"]["ins_gravX"]**2)
+nucSeedRadius = params["Heater"]["htr_nucSeedRadius"]
 
-# Heurisitc assignment of site density
+# Scaling of nucleation site density
 maxSiteDensity = 6.
 
 # Non-dimensional critical heat flux
@@ -68,9 +69,11 @@ heaterArea2D = (params["Grid"]["xmax"]-params["Grid"]["xmin"])
 heaterArea3D = heaterArea2D*(params["Grid"]["zmax"]-params["Grid"]["zmin"])
 
 # Linear scaling for site density to calculate numSites
-siteDensity = heatFluxRatio*maxSiteDensity
-numSites2D = siteDensity*heaterArea2D
-numSites3D = siteDensity*heaterArea3D
+siteDensity2D = heatFluxRatio*maxSiteDensity*(numpy.pi*1e-1/2)*(1e-1/nucSeedRadius)
+siteDensity3D = heatFluxRatio*maxSiteDensity*(1e-1/nucSeedRadius)**2
+
+numSites2D = siteDensity2D*heaterArea2D
+numSites3D = siteDensity3D*heaterArea3D
 
 # Calculate contact angles
 rcdAngle = 45.
@@ -80,11 +83,11 @@ advAngle = rcdAngle + heatFluxRatio*75.
 Rd = 0.4251*(rcdAngle*numpy.pi/180.)*numpy.sqrt(2*Bo)
 
 # Calculation of depature, growth, and wait times
-bubbleFrequency = (St*heatFlux)/(rhoGas*Re*Pr)/(4*siteDensity*numpy.pi/3)/(Rd**3)
+bubbleFrequency = (St*heatFlux)/(rhoGas*Re*Pr)/(4*siteDensity3D*numpy.pi/3)/(Rd**3)
 nucWaitTime = (3./4)/bubbleFrequency
 nucGrowthTime = (1./4)/bubbleFrequency
 
-print(f"siteDensity:   {round(siteDensity,1)}")
+print(f"siteDensity:   {round(siteDensity3D,1)}")
 print(f"heatFlux:      {round(heatFlux,1)}")
 print(f"nucWaitTime:   {round(nucWaitTime,1)}")
 print(f"nucGrowthTime: {round(nucGrowthTime,1)}")

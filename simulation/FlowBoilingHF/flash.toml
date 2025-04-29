@@ -79,7 +79,7 @@
 
 [Multiphase]
   mph_rhoGas = 0.0083
-  mph_muGas = 1.0
+  mph_muGas = 0.028
   mph_iPropSmear = 1.5
   mph_invWeber = 1.0
   mph_thcoGas = 0.25

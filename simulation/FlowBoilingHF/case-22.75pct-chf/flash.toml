@@ -20,7 +20,7 @@
   heatFluxFlg = true
   nucTemp = 1.0
   nucWaitTime = 1.2
-  numSites = 219
+  numSites = 34
   heatFlux = 12.7
 
 [Heater.0002]
@@ -43,5 +43,5 @@
   heatFluxFlg = true
   nucTemp = 1.0
   nucWaitTime = 1.2
-  numSites = 219
+  numSites = 34
   heatFlux = 12.7
