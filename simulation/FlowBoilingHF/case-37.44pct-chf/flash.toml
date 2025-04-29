@@ -21,7 +21,7 @@
   nucTemp = 1.0
   nucWaitTime = 1.2
   numSites = 361
-  heatFlux = 21.
+  heatFlux = 21.0
 
 [Heater.0002]
   xmin =  0.0
@@ -44,4 +44,4 @@
   nucTemp = 1.0
   nucWaitTime = 1.2
   numSites = 361
-  heatFlux = 21.
+  heatFlux = 21.0
