@@ -8,7 +8,7 @@
   zmin =  0.0
   zmax =  3.5
   wallTemp = 1.0
-  advAngle = 90.0
+  advAngle = 62.1
   rcdAngle = 45.0
   velContact = 0.2
   varTempFlg = false
@@ -31,7 +31,7 @@
   zmin = 0.0
   zmax = 3.5
   wallTemp = 1.0
-  advAngle = 90.0
+  advAngle = 62.1
   rcdAngle = 45.0
   velContact = 0.2
   varTempFlg = false
