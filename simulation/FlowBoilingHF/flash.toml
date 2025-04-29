@@ -49,7 +49,7 @@
   nblocky = 2
   nblockz = 1
   enableMaskedGCFill = true
-  nrefs = 1000
+  nrefs = 1_000
   lrefine_min = 1
   lrefine_max = 3
   flux_correct = true
@@ -94,7 +94,7 @@
 
 [Driver]
   restart = false
-  nend = 12000000
+  nend = 12_000_000
   tmax = 50
   dtinit = 0.1e-3
   dtmax = 0.4e-3
