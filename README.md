@@ -1,4 +1,4 @@
-## Laboratory Notebook and Execution Environment for GitHub Open Source Fridays Demonstration
+## Laboratory Notebook and Execution Environment for Flash-X Experiments (Part of GitHub Open Source Fridays Demonstration)
 
 ## Overview
 
