@@ -11,7 +11,7 @@
 #
 # Calcluation of the nucleation wait time, and number of sites is available in nucpar.py
 #
-# REFERENCE:
+# See Figure 8(a) in:
 #
 # V.S. Devahdhanush, Issam Mudawar, Henry K. Nahra, R. Balasubramaniam, Mohammad M. Hasan, Jeffrey R. Mackey,
 # Experimental heat transfer results and flow visualization of vertical upflow boiling in Earth gravity with
