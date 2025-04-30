@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Dhruv"
+  given-names: "Akash"
+  orcid: "https://orcid.org/0000-0003-4997-321X"
+- family-names: "Hassan"
+  given-names: "Sheikh Md Shakeel"
+  orcid: "https://orcid.org/0009-0003-1819-9361"
+title: "Lab-Notebooks/Flash-X-Development: 2025.04"
+version: 2025.04
+doi: 10.5281/zenodo.15313522
+date-released: 2025-30-04
+url: "https://github.com/Lab-Notebooks/Flash-X-Development/tree/2025.04"
