@@ -45,3 +45,10 @@
   nucWaitTime = 1.2
   numSites = 3255
   heatFlux = 53.9
+
+[Grid]
+  gr_amrexMG_Tol = 1.0e-3
+  lrefine_max = 3
+
+[IO]
+  plotFileIntervalTime = 1.0
