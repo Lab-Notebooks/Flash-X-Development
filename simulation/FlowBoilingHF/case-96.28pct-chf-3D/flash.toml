@@ -47,7 +47,7 @@
   heatFlux = 53.9
 
 [Grid]
-  gr_amrexMG_Tol = 1.0e-3
+  gr_amrexMG_Tol = 1.0e-5
   lrefine_max = 3
 
 [IO]
