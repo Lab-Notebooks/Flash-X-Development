@@ -72,8 +72,8 @@ heaterArea3D = heaterArea2D*(params["Grid"]["zmax"]-params["Grid"]["zmin"])
 siteDensity = heatFluxRatio*maxSiteDensity
 
 # Calculate number of nucleation sites by scaling appropriately
-numSites2D = siteDensity*heaterArea2D*(numpy.pi*1e-1/2)*(1e-1/nucSeedRadius)
-numSites3D = siteDensity*heaterArea3D*(1e-1/nucSeedRadius)**2
+numSites2D = siteDensity*heaterArea2D*(numpy.pi*1e-1/2)#*(1e-1/nucSeedRadius)
+numSites3D = siteDensity*heaterArea3D#*(1e-1/nucSeedRadius)**2
 
 # Calculate contact angles
 rcdAngle = 45.
