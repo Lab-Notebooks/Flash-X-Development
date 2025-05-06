@@ -86,8 +86,8 @@
   mph_CpGas = 0.83
   mph_Stefan = 0.5
   mph_Tsat = 0.05
-  mph_presTol = 0.01
-  mph_tempTol = 0.01
+  mph_presTol = 0.1
+  mph_tempTol = 0.1
 
 [HeatAD]
   ht_Prandtl = 8.4
@@ -104,7 +104,7 @@
 [IO]
   basenm = "INS_Flow_Boiling_"
   checkpointFileIntervalTime = 2.0
-  plotFileIntervalTime = 0.5
+  plotFileIntervalTime = 1.0
   checkpointFileNumber = 0
   rolling_checkpoint = 2
   plotFileNumber = 0
