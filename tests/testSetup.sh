@@ -11,4 +11,4 @@ cd $JobWorkDir && flashxtest init -z $FLASHX_HOME \
 	         -a $FLASHTEST_LOCAL_ARCHIVE -o $FLASHTEST_OUTDIR -mpi=mpirun -make="make -j"
 
 # Initialiaze Flash-X test suite
-cd $JobWorkDir && flashxtest setup-suite --overwrite Tests.suite 
+cd $JobWorkDir && flashxtest setup-suite --overwrite *.suite
