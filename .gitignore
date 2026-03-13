@@ -19,6 +19,7 @@ software/flashkit/FlashKit
 software/hdf5/HDF5
 software/hypre/HYPRE
 software/ann/ANN
+software/uniframe/UniFrame
 boxmem
 *jobnode.archive*
 !*hdf5_ibd*
