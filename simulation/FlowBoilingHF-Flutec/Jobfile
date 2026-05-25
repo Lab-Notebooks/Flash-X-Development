@@ -1,0 +1,18 @@
+# Jobrunner configuration file
+
+job:
+  target: flashx
+  setup:
+    - flashOptions.sh
+    - flashBuild.sh
+  submit:
+    - flashOptions.sh
+    - calResources.sh
+    - flashRun.sh
+  input:
+    - flash.toml
+  archive:
+    - amrex.pc
+  clean:
+    - flashx
+    - amrex.pc

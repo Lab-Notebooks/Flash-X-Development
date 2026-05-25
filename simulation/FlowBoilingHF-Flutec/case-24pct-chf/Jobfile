@@ -1,0 +1,20 @@
+# Jobrunner configuration file
+
+job:
+  input:
+    - flash.toml
+  archive:
+    - flash.par
+    - "INS*"
+    - "*.out"
+    - "*.boiling"
+    - "*_hdf5_*"
+  clean:
+    - flashx
+    - flash.par
+    - "flashx*"
+    - "*.log"
+    - "*_hdf5_plt_*"
+    - "*_hdf5_grd_*"
+    - "*_hdf5_htr_*"
+    - "*.out"

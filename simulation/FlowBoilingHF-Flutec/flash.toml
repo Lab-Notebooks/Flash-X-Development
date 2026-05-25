@@ -1,0 +1,117 @@
+# Input file for running flow boiling simulations in a channel with constant heat flux
+# boundary conditions. Following heater parameters are redundant for running simulations
+# for this configuration with Flash-X tag 55157877a:
+#
+# wallTemp, varTempFlg, C0-C3, nucTemp.
+#
+# These parameters are only required for compilation and compatibility purposes. The
+# non-dimensional CHF for this configuration is 56 (16.7 W/cm**2), therefore a configuration 
+# at 17% of CHF will result in heatFlux = 10. The working fluid is assumed to be FC-72, with 
+# saturation temperature of 62 degree Celsius and the bulk temperature is 60 degree Celsius.
+#
+# Calcluation of the nucleation wait time, and number of sites is available in nucpar.py
+#
+# See Figure 8(a) in:
+#
+# V.S. Devahdhanush, Issam Mudawar, Henry K. Nahra, R. Balasubramaniam, Mohammad M. Hasan, Jeffrey R. Mackey,
+# Experimental heat transfer results and flow visualization of vertical upflow boiling in Earth gravity with
+# subcooled inlet conditions – In preparation for experiments onboard the International Space Station,
+# International Journal of Heat and Mass Transfer, Volume 188, 2022, 122603, ISSN 0017-9310,
+# https://doi.org/10.1016/j.ijheatmasstransfer.2022.122603.
+
+[Heater]
+  htr_heaterName = "flow_boiling"
+  htr_numHeaters = 2
+  htr_nucSeedRadius = 0.1
+
+[Logfile]
+  run_comment = "Flow Boiling problem"
+  log_file = "INS_Flow_Boiling.log"
+
+[Grid]
+  geometry = "cartesian"
+  xmin =  0.0
+  xmax =  161.0
+  ymin =  0.0
+  ymax =  7.0
+  zmin =  0.0
+  zmax =  3.5
+  xl_boundary_type = "inflow_ins"
+  xr_boundary_type = "outflow_ins"
+  yl_boundary_type = "noslip_ins"
+  yr_boundary_type = "noslip_ins"
+  zl_boundary_type = "noslip_ins"
+  zr_boundary_type = "noslip_ins"
+  gr_amrexMG_composite_solve = true
+  gr_amrexMG_Tol = 1.0e-11
+  gr_amrexMG_max_iter = 200
+  nblockx = 46
+  nblocky = 2
+  nblockz = 1
+  enableMaskedGCFill = true
+  nrefs = 1_000
+  lrefine_min = 1
+  lrefine_max = 3
+  flux_correct = true
+  amrexFaceInterpolator = "face_div_free"
+  refine_var_1 = "dfun"
+  refine_var_count = 1
+
+[IncompNS]
+  ins_invReynolds = 0.0042
+  ins_inflowVelScale = 1.5
+  ins_gravX = -1.0
+  ins_cflFlg = 1
+  ins_cfl = 0.05
+  ins_sigma = 0.05
+  ins_dtSpec = 0.1e-3
+  ins_pressureCorrect = false
+  ins_intSchm = 2
+  ins_advSchm = 105
+
+[Outlet]
+  out_buffer = 2.0
+
+[Simulation]
+  sim_lengthScaleMeters = 7.3e-4
+  sim_timeScaleSeconds = 8.6e-3
+  sim_tempScaleExpr = "40*T + 60"
+
+[Multiphase]
+  mph_rhoGas = 0.0083
+  mph_muGas = 0.028
+  mph_iPropSmear = 1.5
+  mph_invWeber = 1.0
+  mph_thcoGas = 0.25
+  mph_CpGas = 0.83
+  mph_Stefan = 0.5
+  mph_Tsat = 0.05
+  mph_presTol = 0.1
+  mph_tempTol = 0.1
+
+[HeatAD]
+  ht_Prandtl = 8.4
+
+[Driver]
+  restart = false
+  nend = 12_000_000
+  tmax = 50
+  dtinit = 0.1e-3
+  dtmax = 0.4e-3
+  tstep_change_factor = 1.01
+  wall_clock_time_limit = -1
+
+[IO]
+  basenm = "INS_Flow_Boiling_"
+  checkpointFileIntervalTime = 2.0
+  plotFileIntervalTime = 1.0
+  checkpointFileNumber = 0
+  rolling_checkpoint = 2
+  plotFileNumber = 0
+  plot_var_1 = "pres"
+  plot_var_2 = "velx"
+  plot_var_3 = "vely"
+  plot_var_4 = "dfun"
+  plot_var_5 = "temp"
+  plot_var_6 = "mflx"
+  ignoreForcedPlot = true
