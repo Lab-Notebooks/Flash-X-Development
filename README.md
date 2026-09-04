@@ -23,10 +23,12 @@ Building Flash-X in AMReX mode requires that Message Passing Interface (MPI) lib
 Organization of computational experiments is implemented using Jobrunner, which enables reuse of files/scripts along directory trees and ensures strict organization rules. Details on Jobrunner are provided separately in its own repository (https://github.com/Lab-Notebooks/Jobrunner), and can be installed by running,
 
 ```
-pip install -r requirements.txt --user --upgrade
+uv venv
+source .venv/bin/activate
+uv sync
 ```
 
-`pip` should point to Python3.8+ package installer `pip3`
+`uv` manages the Python 3.8+ environment and installs Jobrunner/BoxKit/click from `pyproject.toml`.
 
 Software dependencies for this notebook are divided into two categories: 
 

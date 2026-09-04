@@ -1,0 +1,20 @@
+[project]
+name = "flash-x-development"
+version = "0.0.0"
+description = "Laboratory notebook and execution environment for Flash-X experiments"
+requires-python = ">=3.8,<3.12"
+dependencies = [
+    "click",
+    "boxkit",
+    "pyjobrunner",
+    # pyjobrunner imports pkg_resources (jobrunner/cli/_jobrunner.py) but doesn't
+    # declare setuptools as a dependency itself. setuptools>=82 dropped pkg_resources.
+    "setuptools<82",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+boxkit = { git = "https://github.com/Box-Tools/BoxKit.git", branch = "main" }
+pyjobrunner = { git = "https://github.com/Lab-Notebooks/Jobrunner.git", tag = "2024.08" }
