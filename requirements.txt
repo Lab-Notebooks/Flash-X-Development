@@ -1,3 +1,0 @@
-click
-git+ssh://git@github.com/Box-Tools/BoxKit.git@main
-git+ssh://git@github.com/Lab-Notebooks/Jobrunner.git@2024.08
